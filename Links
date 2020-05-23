@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("http://newtours.demoaut.com/mercurysignon.php")
+
+#Normally all the links start with the tag name called anchor tag i.e.,<a > so we use tag name to extract easily
+links = driver.find_elements(By.TAG_NAME,"a")
+
+print(len(links)) #It shows how many links are there in the webpage
+
+for link in links:
+    print(link.text) #It prints all the link name on the console
+    
+#now how to select the link
+#driver.find_element(By.LINK_TEXT,"REGISTER").click()
+
+#Here we have 2 types of link_texts 1)LINK_TEXT :- where we will give the text of the link
+#2) PARTIAL_LINK_TEXT :- Here we can give the partial text of the link e.g.,Inplace of REGISTER we can give REG
+
+driver.find_element(By.PARTIAL_LINK_TEXT,"REG").click()
