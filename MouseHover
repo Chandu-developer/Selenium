@@ -1,0 +1,12 @@
+#This is just sample on how to do entire code needs to be donel
+#for e.g if in webpage there is admin->usermanagement->user so if u wnat to click on user then it is useful
+
+"""from selenium.webdriver import ActionChains
+
+admin = driver.find_element_by_Xpath("xpath here")
+usrmgnt = driver.find_element_by_Xpath("xpath here")
+user = driver.find_element_by_Xpath("xpath here")
+
+actions = Action.Chains(driver)
+
+actions.move_to_element(admin).move_to_element(usrmgnt).move_to_element(user).click().perform()"""
