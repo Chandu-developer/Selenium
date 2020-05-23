@@ -1,0 +1,14 @@
+rom selenium import webdriver
+import time
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("http://testautomationpractice.blogspot.com/") #for opening this url will take sometime
+
+driver.find_element_by_xpath("//*[@id='HTML9']/div[1]/button").click()
+
+time.sleep(5)
+
+driver.switch_to_alert().accept() #It will press OK button automatically
+
+driver.switch_to_alert().dismiss() #It will press Cancel button automatically
