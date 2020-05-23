@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("https://www.dyn-web.com/tutorials/forms/examples/pizza.php")
+
+#This is for radio buttons
+z = driver.find_element_by_xpath("//fieldset/p[1]/label[3]/input").is_selected() #checks whether the radio button is selected or not
+print(z)
+
+driver.find_element_by_name("mushrooms").click() #It will select the mushrooms radio button
+status = driver.find_element_by_name("mushrooms").is_selected() #checks whether the radio button is selected or not
+
+print(status)
+
+#similarly I want to click another check box let it be black olives
+driver.find_element_by_name("black_olives").click()
+status1 = driver.find_element_by_name("black_olives").is_selected()
+print(status1)
