@@ -1,0 +1,27 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("https://semantic-ui.com/modules/dropdown.html")
+
+#note:- this webpage is not working
+drop = driver.find_element_by_xpath("div[4]/div/div[2]/div[4]/div[1]/div[4]/div")
+drp = Select(drop)
+
+#We can select any drop down value by 3 ways
+
+drp.select_by_index(2) #by index and index starts with 0
+
+drp.select_by_visible_text("MALE") #by the text in the dropdown
+
+drp.select_by_value("Radio-2") #by the value in that html code
+
+#To capture all the options and print them as output and to count no of options in that dropdown
+print(len(drp.options))
+
+all_options = drp.options
+#To prints all the options in that are present in the dropdown
+for option in all_options:
+    print(option.text)
+
