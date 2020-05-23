@@ -1,0 +1,19 @@
+#Gmail login using selenium
+from selenium import webdriver
+import time
+
+#this is the path where downloaded chrome driver is stored and r is for changing this to raw string
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("https://www.amazon.in/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&")
+driver.find_element_by_name("email").send_keys("7799004638")
+driver.find_element_by_id("continue").click()
+driver.find_element_by_id("ap_password").send_keys("suryateja@9")
+driver.find_element_by_id("signInSubmit").click()
+
+driver.find_element_by_xpath("//*[@id='cvf-page-content']/div[1]/div/div/form/div[4]/label/input").click()
+
+driver.find_element_by_id("continue").click()
+driver.find_element_by_class_name("a-button-input").click()
+
+driver.find_element_by_id("twotabsearchtextbox").send_keys("")
