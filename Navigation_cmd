@@ -1,0 +1,25 @@
+#back - uses <- which is in left top corner of browser and goes to the back page
+#forward - uses -> which is in top left corner of browser and goes to the forward page
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("https://www.flipkart.com/") #first it will open flipkart page
+print(driver.title) #shows the title
+time.sleep(5) #waits for 5 secs
+
+driver.get("https://www.amazon.in/") #after 5 secs it will open amazon page
+print(driver.title) #shows the title of the page
+time.sleep(5) #waits for 5 secs
+
+driver.back() #using this back method it again go to back page i.e.,flipkart page here
+print(driver.title) #shows title
+time.sleep(5) #waits for 5 secs
+
+driver.forward() #using this forward method it again opens  the amazon page
+print(driver.title) #shows title
+time.sleep(5) #finally waits for 5 secs
+
+driver.close() #and closes the application
+
