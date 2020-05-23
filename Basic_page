@@ -1,0 +1,18 @@
+from selenium import webdriver
+#from selenium.webdriver.common.keys import keys
+
+#To keep the path of the browser
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("http://demo.automationtesting.in/windows.html")
+
+print(driver.title) #It shows the title of the page
+
+print(driver.current_url) #It shows the current url of the page
+
+#print(driver.page_source) #It shows the html code of the page
+
+#driver.find_element_by_xpath("//*[@id="u_0_b"]").click()
+time.sleep(5)
+
+driver.close()  #It closes the browser
