@@ -1,0 +1,36 @@
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome(executable_path = r"C:\Users\91779\.spyder-py3\practice\chromedriver")
+
+driver.get("http://newtours.demoaut.com/mercurysignon.php")
+
+#This is to check the username block
+user_ele = driver.find_element_by_name("userName")
+
+print(user_ele.is_displayed()) #it returns true or false if displayed true else false
+
+print(user_ele.is_enabled()) #it returns true or false if enabled true else false
+
+user_ele.send_keys("chandu")#This is the username
+
+#This is check the password block
+pwd_ele = driver.find_element_by_name("password")
+
+print(pwd_ele.is_displayed()) #it returns true or false if displayed true else false
+
+print(pwd_ele.is_enabled()) #it returns true or false if enabled true else false
+
+pwd_ele.send_keys("chandu") #This is the pwd
+
+driver.find_element_by_name("login").click() #It clicks the submit button and goes to next page
+
+#now the issue is to check whether the radio button is clicked or not for that radio button we use find_element_by_css_selector
+radio1 = driver.find_element_by_css_selector("input[value=roundtrip]") #It checcks whether the radio button is selected or not if selected gives true else false
+print(radio1.is_selected())
+
+radio2 = driver.find_element_by_css_selector("input[value=oneway]")
+print(radio2.is_selected())
+
+#time.sleep(5)
+driver.close()
