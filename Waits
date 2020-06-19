@@ -1,0 +1,18 @@
+->Now-a-days most of the web apps are using AJAX technologies. Due to this, when a page is loaded into the browser, the elements within that page will be
+  loaded at different intervals of time.
+->This makes locating elements difficult: If the elem is not yet present in the Document Object Model(DOM), a locate elem will raise an error like 
+  'ElementNotVisibleException'.
+->By using waits we can solve this issue. There are two types of waits : 1)Explicit waits and 2)Implicit waits.
+->Explicit waits :- Web driver waits for certain condition to occur before proceeding further with execution.
+->Implicit waits :- It makes web driver to poll the DOM for a certain amount of time when trying to locate an element. Simply, waits for the particular amount
+  of time when searching the element if the element is not immediately present.
+->time.sleep(10) :- For implicit it will wait for 10 secs to load the page then our testing script will starts.
+->Explicit e.g..,:- For e.g.., we are selecting a country from dropdown and state from drop if we select a country India then it takes some time to populate
+  the states in India for those conditions we use Explicit waits.
+	wait = WebDriverWait(driver,100)
+	wait.until(ec.text_to_be_present_in_element((By.ID,'countryId'),'India'))
+	obj = select(driver.find_element_by_id('countryId'))
+	obj.select_by_visible_text('India')
+
+	#similarly for states
+
